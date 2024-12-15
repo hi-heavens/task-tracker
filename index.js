@@ -2,12 +2,11 @@
 
 const argv = process.argv.slice(2);
 const addTask = require("./taskControllers/addTask");
+const listTasks = require("./taskControllers/listTasks");
 const deleteTask = require("./taskControllers/deleteTask");
 const updateTask = require("./taskControllers/updateTask");
 const inProgress = require("./taskControllers/inProgress");
-const listTasks = require("./taskControllers/listTasks");
 
-console.log(argv.length);
 if (argv.length < 4) {
   const action = argv[0];
   if (action === "add") addTask(argv[1]);
