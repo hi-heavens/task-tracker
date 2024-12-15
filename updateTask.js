@@ -2,6 +2,11 @@ const fs = require("node:fs");
 const currentDate = require("./currentDate");
 
 module.exports = (id, newDescription) => {
+  if (!id || !newDescription) {
+    console.log("Usage: task-cli update <id> <task>");
+    return;
+  }
+
   fs.readFile("db.json", "utf-8", (err, data) => {
     const db = JSON.parse(data);
 
