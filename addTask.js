@@ -20,7 +20,7 @@ module.exports = (task) => {
       if (err) {
         console.log("Error writing to tasks database");
       } else {
-        console.log(`Task added successfully: (ID:${item.id})`);
+        console.log(`Output: Task added successfully: (ID:${item.id})`);
       }
     });
   });
