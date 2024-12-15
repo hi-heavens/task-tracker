@@ -1,9 +1,10 @@
 #!/usr/bin/env node
 
 const argv = process.argv.slice(2);
-const addTask = require("./addTask");
-const deleteTask = require("./deleteTask");
-const updateTask = require("./updateTask");
+const addTask = require("./utils/addTask");
+const deleteTask = require("./utils/deleteTask");
+const updateTask = require("./utils/updateTask");
+const inProgress = require("./utils/inProgress");
 
 console.log(argv.length);
 if (argv.length < 4) {
@@ -14,6 +15,8 @@ if (argv.length < 4) {
     updateTask(argv[1], argv[2]);
   } else if (action === "delete") {
     deleteTask(argv[1]);
+  } else if (action === "mark-in-progress") {
+    inProgress(argv[1]);
   }
 } else {
   console.log("Usage: task-cli <action> <args>");
