@@ -1,8 +1,9 @@
 const fs = require("node:fs");
+const currentDate = require("./currentDate");
 
 module.exports = (id) => {
   if (!id) {
-    console.log("Usage: task-cli delete <id>");
+    console.log("Usage: task-cli mark-in-progress <id>");
     return;
   }
 
@@ -14,15 +15,18 @@ module.exports = (id) => {
       console.log(`Output: Task not found: (ID:${id})`);
       return;
     } else {
-      db.splice(taskIndex, 1);
-      console.log(db);
+      db[taskIndex] = {
+        ...db[taskIndex],
+        status: "in-progress",
+        updatedAt: currentDate,
+      };
     }
 
     fs.writeFile("db.json", JSON.stringify(db), (err) => {
       if (err) {
         console.log("Error writing to tasks database");
       } else {
-        console.log(`Output: Task deleted successfully: (ID:${id})`);
+        console.log(`Output: Task marked as in-progress: (ID:${id})`);
       }
     });
   });
