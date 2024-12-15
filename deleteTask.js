@@ -1,9 +1,8 @@
 const fs = require("node:fs");
-const currentDate = require("./currentDate");
 
-module.exports = (id, newDescription) => {
-  if (!id || !newDescription) {
-    console.log("Usage: task-cli update <id> <task>");
+module.exports = (id) => {
+  if (!id) {
+    console.log("Usage: task-cli delete <id>");
     return;
   }
 
@@ -15,20 +14,15 @@ module.exports = (id, newDescription) => {
       console.log(`Output: Task not found: (ID:${id})`);
       return;
     } else {
-      db[taskIndex] = {
-        ...db[taskIndex],
-        description: newDescription,
-        updatedAt: currentDate,
-      };
+      db.splice(taskIndex, 1);
+      console.log(db);
     }
 
     fs.writeFile("db.json", JSON.stringify(db), (err) => {
       if (err) {
         console.log("Error writing to tasks database");
       } else {
-        console.log(
-          `Output: Task updated successfully: (ID:${db[taskIndex].id})`
-        );
+        console.log(`Output: Task deleted successfully: (ID:${id})`);
       }
     });
   });
