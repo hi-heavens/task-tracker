@@ -33,7 +33,7 @@
 
 ### Project URL:
 
-- [Task Tracker CLI](https://roadmap.sh/projects/task-tracker)
+- https://roadmap.sh/projects/task-tracker
 
 ### Contributing:
 
