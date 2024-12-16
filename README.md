@@ -20,7 +20,7 @@
 
 ### Getting Started:
 
-1. Clone the repository
+1. Clone the repository: `git clone https://github.com/hi-heavens/task-tracker.git`
 2. Navigate to the project directory
 3. Install dependencies: `npm install`
 4. Create a symlink to the CLI: `npm install -g .`
