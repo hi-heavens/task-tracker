@@ -31,6 +31,10 @@
 
 - Node.js
 
+### Project URL:
+
+- [Task Tracker CLI](https://github.com/hi-heavens/task-tracker)
+
 ### Contributing:
 
 Contributions are welcome. If you find a bug or want to add a new feature, feel free to DM, fork the repository and submit a pull request.
