@@ -33,7 +33,7 @@
 
 ### Project URL:
 
-- [Task Tracker CLI](https://github.com/hi-heavens/task-tracker)
+- [Task Tracker CLI](https://roadmap.sh/projects/task-tracker)
 
 ### Contributing:
 
